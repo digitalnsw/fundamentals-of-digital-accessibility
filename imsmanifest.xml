@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="no" ?>
+<!-- created with "Manifest Maker for ADL SCORM 1.2 Version 2.0.0" for Dreamweaver,
+ on Mon Apr 14 2014 10:03:45 GMT+1000 (AUS Eastern Standard Time) -->
+
+<manifest identifier="com.scorm.module" version="1.0" 
+  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" 
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                        http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd
+                        http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+
+  <organizations default="TOC1">
+    <organization identifier="TOC1">
+      <title>v2.3 DCS_M1_Digital accessibility fundamentals </title>
+      <item identifier="I_SCO0" identifierref="SCO0">
+        <title>v2.3 DCS_M1_Digital accessibility fundamentals </title>
+      </item>
+    </organization>
+  </organizations>
+
+  <resources>
+    <resource identifier="SCO0" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="index.html" />
+      <dependency identifierref="ALLRESOURCES" />
+    </resource>
+
+    <resource identifier="ALLRESOURCES" type="webcontent" adlcp:scormtype="asset"></resource>
+  </resources>
+</manifest>
