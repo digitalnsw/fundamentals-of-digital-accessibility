@@ -1,34 +1,62 @@
 <?xml version="1.0" standalone="no" ?>
-<!-- created with "Manifest Maker for ADL SCORM 1.2 Version 2.0.0" for Dreamweaver,
- on Mon Apr 14 2014 10:03:45 GMT+1000 (AUS Eastern Standard Time) -->
+<!--
+Single SCO content packaging example. SCORM 2004 3rd Edition.
 
-<manifest identifier="com.scorm.module" version="1.0" 
-  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" 
-  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
-                        http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd
-                        http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+Provided by Rustici Software - http://www.scorm.com
 
+This example demonstrates the simplest possible manifest, containing just one SCO and 
+no metdata or sequencing information.
+-->
+
+<!-- 
+The manifest node contains a unique identifer for this course and the course's version number.
+The schema declartions are important to ensure you are delivering valid XML. For the most part
+these should remain static. Other schema prefixes are allowed, but can limit interoperabilty.
+-->
+<manifest identifier="com.scorm.module" version="1"
+          xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
+          xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3"
+          xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3"
+          xmlns:imsss="http://www.imsglobal.org/xsd/imsss"
+          xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+                              http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+                              http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+                              http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd
+                              http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd">
+	
+  <!--The metadata node simply declares which SCORM version this course operates under.-->
   <metadata>
-    <schema>ADL SCORM</schema>
-    <schemaversion>1.2</schemaversion>
-  </metadata>
-
-  <organizations default="TOC1">
-    <organization identifier="TOC1">
-      <title>The Fundamentals of Digital Accessibility V1.1</title>
-      <item identifier="I_SCO0" identifierref="SCO0">
-        <title>The Fundamentals of Digital Accessibility V1.1</title>
-      </item>
-    </organization>
-  </organizations>
-
-  <resources>
-    <resource identifier="SCO0" type="webcontent" adlcp:scormtype="sco" href="index.html">
+		<schema>ADL SCORM</schema>
+		<schemaversion>2004 4th Edition</schemaversion>
+	</metadata>
+  <!-- There is just one organization. The organization contains just one item.-->
+	<organizations default="TOC1">
+		<organization identifier="TOC1">
+			<title>The Fundamentals of Digital Accessibility</title>
+			<item identifier="item_1" identifierref="resource_1">
+				<title>The Fundamentals of Digital Accessibility</title>
+        <imsss:sequencing>
+          <imsss:deliveryControls tracked="true" completionSetByContent="true" objectiveSetByContent="true" />
+        </imsss:sequencing>
+			</item>
+      <imsss:sequencing>
+        <imsss:controlMode choice="true" flow="true" />
+      </imsss:sequencing>
+		</organization>
+	</organizations>
+  <!-- 
+  There is just one resource that represents the single SCO that comprises the entirety of this course.
+  The href attribute points to the launch URL for the course and all of the files required by the course
+  are listed.
+  -->
+	<resources>
+		<resource identifier="resource_1" type="webcontent" adlcp:scormType="sco" href="index.html">
       <file href="index.html" />
       <dependency identifierref="ALLRESOURCES" />
     </resource>
-
-    <resource identifier="ALLRESOURCES" type="webcontent" adlcp:scormtype="asset"></resource>
-  </resources>
+    
+    <resource identifier="ALLRESOURCES" type="webcontent" adlcp:scormType="asset"></resource>
+	</resources>
 </manifest>
