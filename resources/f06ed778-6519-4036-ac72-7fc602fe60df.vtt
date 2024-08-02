@@ -1,0 +1,29 @@
+WEBVTT
+
+NOTE
+To enable cue styles, please remove above 'NOTE' line as well as this line.
+STYLE
+::cue {
+	font-family: Verdana;
+	color: #FFFFFF;
+	background-color: #000000FF;
+}
+
+1
+00:00:01.120 --> 00:00:04.820 line:15 align:center
+There was a, uh, time sensitive issue at work
+that we needed to address
+
+2
+00:00:05.520 --> 00:00:08.020 line:15 align:center
+and I was, uh, needed in that meeting. 
+
+3
+00:00:08.520 --> 00:00:13.520 line:15 align:center
+I was unable to join the call due to 
+no visual component and no caption component, 
+
+4
+00:00:14.120 --> 00:00:19.520 line:15 align:center
+so therefore, um, I wasn't able to access it 
+and therefore I was removed from the job.
